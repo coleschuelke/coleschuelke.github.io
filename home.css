@@ -356,12 +356,16 @@ main {
     background-color: #CED4DA;
     text-align: center;
     box-shadow: -1px -1px 10px #343a406c;
+
+    font-family: 'Agdasima', sans-serif;
 }
 .certifications {
     grid-area: 6 / 1 / 7 / 4;
     background-color: #0c77cf;
     text-align: center;
     box-shadow: -1px -1px 10px #343a406c;
+
+    font-family: 'Agdasima', sans-serif;
 }
 .awards {
     grid-area: 7 / 1 / 8 / 4;
