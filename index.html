@@ -37,7 +37,7 @@
 
         /* Background image for hero section */
         #hero-section {
-            background-image: url('https://cdn.mos.cms.futurecdn.net/ivDMoYPyqyUHYyiKjkAeK3.jpg'); /* Space-themed image */
+            background-image: url('https://images.unsplash.com/photo-1632517861962-d27e28b80980?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTIyMjh8MHwxfHNlYXJjaHwxNXx8c2F0ZWxsaXRlJTIwc3BhYWVsZW58MHx8fHwxNjk5MjI3ODQ2fDA&ixlib=rb-4.0.3&q=80&w=1080'); /* Space-themed image */
             background-size: cover;
             background-position: center;
             position: relative;
@@ -59,7 +59,7 @@
 
         /* General section background images */
         .bg-space-texture {
-            background-image: url('https://media.defense.gov/2025/Aug/22/2003786404/-1/-1/0/250822-F-AF000-4583.JPG'); /* Another space texture */
+            background-image: url('https://images.unsplash.com/photo-1517976696499-d41c107e0c4a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTIyMjh8MHwxfHNlYXJjaHwyMHx8c3BhY2UlMjB0ZXh0dXJlfGVufDBfHx8fDE2OTkyMjg4NzR8MA&ixlib=rb-4.0.3&q=80&w=1080'); /* Another space texture */
             background-size: cover;
             background-position: center;
             position: relative;
@@ -82,7 +82,7 @@
 
         /* Second background image for home page */
         .bg-space-texture-2 {
-            background-image: url('https://cdn.cosmonova.org/cosmonova/images/blog/namestar_img1.jpg'); /* Nebula texture */
+            background-image: url('https://images.unsplash.com/photo-1538370965046-79c0d6907d47?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTIyMjh8MHwxfHNlYXJjaHw1fHxuZWJ1bGF8ZW58MHx8fHwxNzMwNzAzMTQwfDA&ixlib=rb-4.0.3&q=80&w=1080'); /* Nebula texture */
             background-size: cover;
             background-position: center;
             position: relative;
@@ -133,16 +133,31 @@
                         <a href="#contact" class="nav-link text-gray-300 hover:text-indigo-400 px-3 py-2 text-base font-medium transition-colors" data-page="contact">Contact</a>
                     </div>
                 </div>
-                <!-- Mobile Menu Button (Optional, not implemented) --><div class="sm:hidden">
-                    <button type="button" class="text-gray-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+                <!-- Mobile Menu Button --><div class="sm:hidden">
+                    <button id="mobile-menu-button" type="button" class="inline-flex items-center justify-center p-2 text-gray-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" aria-controls="mobile-menu" aria-expanded="false">
                         <span class="sr-only">Open main menu</span>
-                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                        <!-- Hamburger Icon -->
+                        <svg id="hamburger-icon" class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16m-7 6h7" />
+                        </svg>
+                        <!-- Close Icon (X) -->
+                        <svg id="close-icon" class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
                         </svg>
                     </button>
                 </div>
             </div>
         </nav>
+
+        <!-- Mobile Menu, hidden by default -->
+        <div class="sm:hidden hidden border-t border-gray-700" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#home" class="mobile-nav-link nav-link text-gray-300 hover:bg-gray-800 hover:text-white block px-3 py-2 text-base font-medium" data-page="home">Home</a>
+                <a href="#capabilities" class="mobile-nav-link nav-link text-gray-300 hover:bg-gray-800 hover:text-white block px-3 py-2 text-base font-medium" data-page="capabilities">Capabilities</a>
+                <a href="#projects" class="mobile-nav-link nav-link text-gray-300 hover:bg-gray-800 hover:text-white block px-3 py-2 text-base font-medium" data-page="projects">Projects</a>
+                <a href="#contact" class="mobile-nav-link nav-link text-gray-300 hover:bg-gray-800 hover:text-white block px-3 py-2 text-base font-medium" data-page="contact">Contact</a>
+            </div>
+        </div>
     </header>
 
     <!-- Main Content Area --><main>
@@ -401,18 +416,18 @@
                         <div class="space-y-6">
                             <div>
                                 <h3 class="text-sm font-semibold text-indigo-400 uppercase tracking-wider">Email</h3>
-                                <a href="coleschuelke@gmail.com" class="text-lg text-white hover:text-indigo-300 transition-colors">coleschuelke@gmail.com</a>
+                                <a href="mailto:alex.johnson.gnc@example.com" class="text-lg text-white hover:text-indigo-300 transition-colors">alex.johnson.gnc@example.com</a>
                             </div>
                             <div>
                                 <h3 class="text-sm font-semibold text-indigo-400 uppercase tracking-wider">LinkedIn</h3>
-                                <a href="#" class="text-lg text-white hover:text-indigo-300 transition-colors">linkedin.com/in/coleschuelke</a>
+                                <a href="#" class="text-lg text-white hover:text-indigo-300 transition-colors">linkedin.com/in/alexjohnsongnc</a>
                             </div>
                             <div>
                                 <h3 class="text-sm font-semibold text-indigo-400 uppercase tracking-wider">Location</h3>
                                 <p class="text-lg text-white">Remote (Based in Austin, TX)</p>
                             </div>
                         </div>
-                        <a href="mailto:coleschuelke@gmail.com" class="mt-10 inline-block w-full text-center bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-4 px-10 text-lg transition-colors border-2 border-indigo-600 hover:border-indigo-500">
+                        <a href="mailto:alex.johnson.gnc@example.com" class="mt-10 inline-block w-full text-center bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-4 px-10 text-lg transition-colors border-2 border-indigo-600 hover:border-indigo-500">
                             Send Me an Email
                         </a>
                     </div>
@@ -432,7 +447,7 @@
     <!-- JavaScript --><script type="module">
         // --- START OF GLOBAL CONFIGURATION ---
 
-        const portfolioName = "Cole Schuelke";
+        const portfolioName = "Alex Johnson";
 
         const coreSkills = [
             'C++', 'Python', 'MATLAB', 'Simulink', 
@@ -578,6 +593,13 @@
         const experienceTags = document.getElementById('experience-tags');
         const experienceDescription = document.getElementById('experience-description');
 
+        // --- Mobile Menu Elements ---
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+        const hamburgerIcon = document.getElementById('hamburger-icon');
+        const closeIcon = document.getElementById('close-icon');
+
 
         /**
          * Sets the portfolio name globally.
@@ -699,21 +721,36 @@
             navLinks.forEach(link => {
                 link.classList.remove('nav-link-active');
             });
+            // Update mobile nav links as well
+            mobileNavLinks.forEach(link => {
+                link.classList.remove('nav-link-active');
+            });
 
             if (hash.startsWith('#project/')) {
                 // For project detail pages, activate the 'Projects' nav link
                 document.querySelector('.nav-link[data-page="projects"]').classList.add('nav-link-active');
+                if (document.querySelector('.mobile-nav-link[data-page="projects"]')) {
+                    document.querySelector('.mobile-nav-link[data-page="projects"]').classList.add('nav-link-active');
+                }
             } else if (hash.startsWith('#experience/')) {
                 // For experience detail pages, activate the 'Home' nav link
                 document.querySelector('.nav-link[data-page="home"]').classList.add('nav-link-active');
+                if (document.querySelector('.mobile-nav-link[data-page="home"]')) {
+                    document.querySelector('.mobile-nav-link[data-page="home"]').classList.add('nav-link-active');
+                }
             } else {
                 // For main pages, activate the corresponding nav link
                 const activeNavLink = document.querySelector(`.nav-link[data-page="${hash.substring(1)}"]`);
+                const activeMobileNavLink = document.querySelector(`.mobile-nav-link[data-page="${hash.substring(1)}"]`);
                 if (activeNavLink) {
                     activeNavLink.classList.add('nav-link-active');
+                    if (activeMobileNavLink) activeMobileNavLink.classList.add('nav-link-active');
                 } else if (hash === '#home' || hash === '') {
                     // Default to home
                     document.querySelector('.nav-link[data-page="home"]').classList.add('nav-link-active');
+                    if (document.querySelector('.mobile-nav-link[data-page="home"]')) {
+                        document.querySelector('.mobile-nav-link[data-page="home"]').classList.add('nav-link-active');
+                    }
                 }
             }
 
@@ -755,6 +792,27 @@
             populateExperienceList();
             populateProjectsGrid();
             updatePage(); // Show the correct page on load
+
+            // --- Mobile Menu Toggle Logic ---
+            if (mobileMenuButton) {
+                mobileMenuButton.addEventListener('click', () => {
+                    const isMenuOpen = !mobileMenu.classList.contains('hidden');
+                    mobileMenu.classList.toggle('hidden');
+                    if (hamburgerIcon) hamburgerIcon.classList.toggle('hidden', !isMenuOpen);
+                    if (closeIcon) closeIcon.classList.toggle('hidden', isMenuOpen);
+                    mobileMenuButton.setAttribute('aria-expanded', !isMenuOpen);
+                });
+            }
+
+            // --- Close Mobile Menu When Link is Clicked ---
+            mobileNavLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if (mobileMenu) mobileMenu.classList.add('hidden');
+                    if (hamburgerIcon) hamburgerIcon.classList.remove('hidden');
+                    if (closeIcon) closeIcon.classList.add('hidden');
+                    if (mobileMenuButton) mobileMenuButton.setAttribute('aria-expanded', 'false');
+                });
+            });
         });
 
     </script>
