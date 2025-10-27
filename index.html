@@ -41,6 +41,10 @@
             background-size: cover;
             background-position: center;
             position: relative;
+            min-height: 100vh; /* This makes it full height */
+            display: flex; /* These center the content */
+            flex-direction: column;
+            justify-content: center;
         }
         #hero-section::before {
             content: "";
@@ -163,7 +167,7 @@
     <!-- Main Content Area --><main>
 
         <!-- Page 1: Home (Hero + About) --><section id="page-home" class="page">
-            <!-- Hero Section --><div id="hero-section" class="relative py-24 sm:py-32 lg:py-48 text-center text-white">
+            <!-- Hero Section --><div id="hero-section" class="relative py-24 text-center text-white">
                 <div id="hero-content" class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                     <h1 class="text-5xl sm:text-6xl font-extrabold leading-tight mb-6">
                         <span class="portfolio-name font-russoOne">Cole Schuelke</span> <br class="hidden md:inline"> 
@@ -202,44 +206,48 @@
                 </div>
             </div>
 
-            <!-- Core Skills Section --><div class="py-16 sm:py-24 bg-space-texture-2">
-                <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                    <h2 class="text-3xl font-extrabold text-white mb-10">Core Skills</h2>
-                    <div id="core-skills-list" class="flex flex-wrap justify-center gap-4">
-                        <!-- Skills will be populated by JavaScript -->
+            <section class="bg-space-texture-2">
+
+                <!-- Core Skills Section --><div class="py-16 sm:py-24">
+                    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                        <h2 class="text-3xl font-extrabold text-white mb-10">Core Skills</h2>
+                        <div id="core-skills-list" class="flex flex-wrap justify-center gap-4">
+                            <!-- Skills will be populated by JavaScript -->
+                        </div>
                     </div>
                 </div>
-            </div>
-            
-            <!-- Experience & Education Section --><div class="pb-16 sm:pb-24 bg-space-texture-2">
-                <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div class="grid grid-cols-1 md:max-w-4xl mx-auto gap-12">
-                        
-                        <!-- Experience Column --><div class="bg-gray-800 p-8 border border-gray-700 sharp-shadow">
-                            <h2 class="text-3xl font-bold text-white mb-6">Experience</h2>
-                            <!-- Experience items will be populated by JavaScript --><div id="experience-list-container" class="relative border-l-2 border-indigo-500 pl-8 space-y-10">
-                                <!-- JS will inject experience here -->
-                            </div>
-                        </div>
-
-                        <!-- Education Column --><div class="bg-gray-800 p-8 border border-gray-700 sharp-shadow">
-                            <h2 class="text-3xl font-bold text-white mb-6">Education</h2>
-                            <div class="space-y-6">
-                                <div>
-                                    <h3 class="text-xl font-semibold text-white">M.S. in Aerospace Engineering</h3>
-                                    <p class="text-indigo-400 mb-1">The University of Texas at Austin | 2027</p>
-                                    <p class="text-gray-300 italic">Nonlinear Estimation and Autonomy Lab - Renato Zanetti</p>
-                                </div>
-                                <div>
-                                    <h3 class="text-xl font-semibold text-white">B.S. in Mechanical Engineering</h3>
-                                    <p class="text-indigo-400 mb-1">The University of Texas at Austin | 2025</p>
+                
+                <!-- Experience & Education Section --><div class="pb-16 sm:pb-24">
+                    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                        <div class="grid grid-cols-1 md:max-w-4xl mx-auto gap-12">
+                            
+                            <!-- Experience Column --><div class="bg-gray-800 p-8 border border-gray-700 sharp-shadow">
+                                <h2 class="text-3xl font-bold text-white mb-6">Experience</h2>
+                                <!-- Experience items will be populated by JavaScript --><div id="experience-list-container" class="relative border-l-2 border-indigo-500 pl-8 space-y-10">
+                                    <!-- JS will inject experience here -->
                                 </div>
                             </div>
-                        </div>
 
+                            <!-- Education Column --><div class="bg-gray-800 p-8 border border-gray-700 sharp-shadow">
+                                <h2 class="text-3xl font-bold text-white mb-6">Education</h2>
+                                <div class="space-y-6">
+                                    <div>
+                                        <h3 class="text-xl font-semibold text-white">M.S. in Aerospace Engineering</h3>
+                                        <p class="text-indigo-400 mb-1">The University of Texas at Austin | 2027</p>
+                                        <p class="text-gray-300 italic">Nonlinear Estimation and Autonomy Lab - Renato Zanetti</p>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-xl font-semibold text-white">B.S. in Mechanical Engineering</h3>
+                                        <p class="text-indigo-400 mb-1">The University of Texas at Austin | 2025</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
                 </div>
-            </div>
+
+            </section>
 
             <!-- Personal Interests Section --><div class="py-16 sm:py-24 bg-gray-900">
                 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
