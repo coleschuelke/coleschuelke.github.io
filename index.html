@@ -1,51 +1,73 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Title will be set by JavaScript --><title>GNC Engineer Portfolio</title>
-    <!-- Tailwind CSS CDN --><script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts: Exo 2 & Russo One --><link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- Title will be set by JavaScript -->
+    <title>GNC Engineer Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Exo 2 & Russo One -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;700;800;900&family=Russo+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;700;800;900&family=Russo+One&display=swap"
+        rel="stylesheet">
     <style>
         /* Base styles for page transitions and active nav links */
         .page {
             display: none;
             animation: fadeIn 0.7s ease-out;
         }
+
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
+
         .page-active {
             display: block;
         }
+
         .nav-link-active {
-            color: #818cf8; /* indigo-400 */
+            color: #818cf8;
+            /* indigo-400 */
             border-bottom: 2px solid #818cf8;
             padding-bottom: 4px;
         }
 
         /* Custom sharper shadow */
         .sharp-shadow {
-            box-shadow: 4px 4px 0px 0px rgba(129, 140, 248, 0.7); /* indigo-400 with offset */
+            box-shadow: 4px 4px 0px 0px rgba(129, 140, 248, 0.7);
+            /* indigo-400 with offset */
         }
+
         .hover\:sharp-shadow:hover {
             box-shadow: 6px 6px 0px 0px rgba(129, 140, 248, 0.9);
         }
 
         /* Background image for hero section */
         #hero-section {
-            background-image: url('https://cdn.mos.cms.futurecdn.net/ivDMoYPyqyUHYyiKjkAeK3.jpg'); /* Space-themed image */
+            background-image: url('https://cdn.mos.cms.futurecdn.net/ivDMoYPyqyUHYyiKjkAeK3.jpg');
+            /* Space-themed image */
             background-size: cover;
             background-position: center;
             position: relative;
-            min-height: 100vh; /* This makes it full height */
-            display: flex; /* These center the content */
+            min-height: 100vh;
+            /* This makes it full height */
+            display: flex;
+            /* These center the content */
             flex-direction: column;
             justify-content: center;
         }
+
         #hero-section::before {
             content: "";
             position: absolute;
@@ -56,6 +78,7 @@
             background: linear-gradient(to top, rgba(17, 24, 39, 0.95) 0%, rgba(17, 24, 39, 0.6) 50%, rgba(17, 24, 39, 0.95) 100%);
             z-index: 1;
         }
+
         #hero-content {
             position: relative;
             z-index: 2;
@@ -63,12 +86,15 @@
 
         /* General section background images */
         .bg-space-texture {
-            background-image: url('https://spacetourismguide.com/wp-content/uploads/2019/12/SpaceX-Launch-Trail.jpg'); /* Another space texture */
+            background-image: url('https://spacetourismguide.com/wp-content/uploads/2019/12/SpaceX-Launch-Trail.jpg');
+            /* Another space texture */
             background-size: cover;
             background-position: center;
             position: relative;
-            padding: 4rem 0; /* Adjust padding as needed */
+            padding: 4rem 0;
+            /* Adjust padding as needed */
         }
+
         .bg-space-texture::before {
             content: "";
             position: absolute;
@@ -76,21 +102,25 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background-color: rgba(17, 24, 39, 0.9); /* Dark overlay */
+            background-color: rgba(17, 24, 39, 0.9);
+            /* Dark overlay */
             z-index: 0;
         }
-        .bg-space-texture > * {
+
+        .bg-space-texture>* {
             position: relative;
             z-index: 1;
         }
 
         /* Second background image for home page */
         .bg-space-texture-2 {
-            background-image: url('https://cdn.cosmonova.org/cosmonova/images/blog/namestar_img1.jpg'); /* Nebula texture */
+            background-image: url('https://cdn.cosmonova.org/cosmonova/images/blog/namestar_img1.jpg');
+            /* Nebula texture */
             background-size: cover;
             background-position: center;
             position: relative;
         }
+
         .bg-space-texture-2::before {
             content: "";
             position: absolute;
@@ -98,10 +128,12 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background-color: rgba(17, 24, 39, 0.9); /* Dark overlay */
+            background-color: rgba(17, 24, 39, 0.9);
+            /* Dark overlay */
             z-index: 0;
         }
-        .bg-space-texture-2 > * {
+
+        .bg-space-texture-2>* {
             position: relative;
             z-index: 1;
         }
@@ -119,33 +151,51 @@
         };
     </script>
 </head>
+
 <body class="bg-gray-900 text-gray-200 font-exo2 antialiased">
 
-    <!-- Header & Navigation --><header class="bg-gray-900/80 backdrop-blur-md sticky top-0 z-50 border-b border-gray-700">
+    <!-- Header & Navigation -->
+    <header class="bg-gray-900/80 backdrop-blur-md sticky top-0 z-50 border-b border-gray-700">
         <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
-                <!-- Personal Name --><div class="flex-shrink-0">
-                    <a href="#home" class="text-3xl font-extrabold text-white hover:text-indigo-400 transition-colors portfolio-name">
+                <!-- Personal Name -->
+                <div class="flex-shrink-0">
+                    <a href="#home"
+                        class="text-3xl font-extrabold text-white hover:text-indigo-400 transition-colors portfolio-name">
                         Cole Schuelke
                     </a>
                 </div>
-                <!-- Navigation Links --><div class="hidden sm:block">
+                <!-- Navigation Links -->
+                <div class="hidden sm:block">
                     <div class="ml-10 flex items-baseline space-x-6">
-                        <a href="#home" class="nav-link text-gray-300 hover:text-indigo-400 px-3 py-2 text-base font-medium transition-colors" data-page="home">Home</a>
-                        <a href="#capabilities" class="nav-link text-gray-300 hover:text-indigo-400 px-3 py-2 text-base font-medium transition-colors" data-page="capabilities">Capabilities</a>
-                        <a href="#projects" class="nav-link text-gray-300 hover:text-indigo-400 px-3 py-2 text-base font-medium transition-colors" data-page="projects">Projects</a>
-                        <a href="#contact" class="nav-link text-gray-300 hover:text-indigo-400 px-3 py-2 text-base font-medium transition-colors" data-page="contact">Contact</a>
+                        <a href="#home"
+                            class="nav-link text-gray-300 hover:text-indigo-400 px-3 py-2 text-base font-medium transition-colors"
+                            data-page="home">Home</a>
+                        <a href="#capabilities"
+                            class="nav-link text-gray-300 hover:text-indigo-400 px-3 py-2 text-base font-medium transition-colors"
+                            data-page="capabilities">Capabilities</a>
+                        <a href="#projects"
+                            class="nav-link text-gray-300 hover:text-indigo-400 px-3 py-2 text-base font-medium transition-colors"
+                            data-page="projects">Projects</a>
+                        <a href="#contact"
+                            class="nav-link text-gray-300 hover:text-indigo-400 px-3 py-2 text-base font-medium transition-colors"
+                            data-page="contact">Contact</a>
                     </div>
                 </div>
-                <!-- Mobile Menu Button --><div class="sm:hidden">
-                    <button id="mobile-menu-button" type="button" class="inline-flex items-center justify-center p-2 text-gray-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" aria-controls="mobile-menu" aria-expanded="false">
+                <!-- Mobile Menu Button -->
+                <div class="sm:hidden">
+                    <button id="mobile-menu-button" type="button"
+                        class="inline-flex items-center justify-center p-2 text-gray-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
+                        aria-controls="mobile-menu" aria-expanded="false">
                         <span class="sr-only">Open main menu</span>
                         <!-- Hamburger Icon -->
-                        <svg id="hamburger-icon" class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
+                        <svg id="hamburger-icon" class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16m-7 6h7" />
                         </svg>
                         <!-- Close Icon (X) -->
-                        <svg id="close-icon" class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
+                        <svg id="close-icon" class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
                         </svg>
                     </button>
@@ -156,51 +206,74 @@
         <!-- Mobile Menu, hidden by default -->
         <div class="sm:hidden hidden border-t border-gray-700" id="mobile-menu">
             <div class="px-2 pt-2 pb-3 space-y-1">
-                <a href="#home" class="mobile-nav-link nav-link text-gray-300 hover:bg-gray-800 hover:text-white block px-3 py-2 text-base font-medium" data-page="home">Home</a>
-                <a href="#capabilities" class="mobile-nav-link nav-link text-gray-300 hover:bg-gray-800 hover:text-white block px-3 py-2 text-base font-medium" data-page="capabilities">Capabilities</a>
-                <a href="#projects" class="mobile-nav-link nav-link text-gray-300 hover:bg-gray-800 hover:text-white block px-3 py-2 text-base font-medium" data-page="projects">Projects</a>
-                <a href="#contact" class="mobile-nav-link nav-link text-gray-300 hover:bg-gray-800 hover:text-white block px-3 py-2 text-base font-medium" data-page="contact">Contact</a>
+                <a href="#home"
+                    class="mobile-nav-link nav-link text-gray-300 hover:bg-gray-800 hover:text-white block px-3 py-2 text-base font-medium"
+                    data-page="home">Home</a>
+                <a href="#capabilities"
+                    class="mobile-nav-link nav-link text-gray-300 hover:bg-gray-800 hover:text-white block px-3 py-2 text-base font-medium"
+                    data-page="capabilities">Capabilities</a>
+                <a href="#projects"
+                    class="mobile-nav-link nav-link text-gray-300 hover:bg-gray-800 hover:text-white block px-3 py-2 text-base font-medium"
+                    data-page="projects">Projects</a>
+                <a href="#contact"
+                    class="mobile-nav-link nav-link text-gray-300 hover:bg-gray-800 hover:text-white block px-3 py-2 text-base font-medium"
+                    data-page="contact">Contact</a>
             </div>
         </div>
     </header>
 
-    <!-- Main Content Area --><main>
+    <!-- Main Content Area -->
+    <main>
 
-        <!-- Page 1: Home (Hero + About) --><section id="page-home" class="page">
-            <!-- Hero Section --><div id="hero-section" class="relative py-24 text-center text-white">
+        <!-- Page 1: Home (Hero + About) -->
+        <section id="page-home" class="page">
+            <!-- Hero Section -->
+            <div id="hero-section" class="relative py-24 text-center text-white">
                 <div id="hero-content" class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                     <h1 class="text-5xl sm:text-6xl font-extrabold leading-tight mb-6">
-                        <span class="portfolio-name font-russoOne">Cole Schuelke</span> <br class="hidden md:inline"> 
+                        <span class="portfolio-name font-russoOne">Cole Schuelke</span> <br class="hidden md:inline">
                         <span class="font-exo2 font-medium">Guidance, Navigation, & Control</span>
                     </h1>
                     <p class="text-xl sm:text-2xl text-gray-300 mb-10 max-w-2xl mx-auto">
                         <!-- Probably want to make this something about estimation and maybe full-stack-ish if I get the forbidden fruit -->
-                        GNC Engineer specializing in advanced estimation and relative navigation, especially as they relate to spacecraft autonomy and earth observation.
+                        GNC Engineer specializing in advanced estimation and relative navigation, especially as they
+                        relate to spacecraft autonomy and earth observation.
                     </p>
-                    <a href="#capabilities" class="inline-block bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-4 px-10 text-lg transition-colors border-2 border-indigo-600 hover:border-indigo-500">
+                    <a href="#capabilities"
+                        class="inline-block bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-4 px-10 text-lg transition-colors border-2 border-indigo-600 hover:border-indigo-500">
                         Explore My Expertise
                     </a>
                 </div>
             </div>
 
-            <!-- About Me Section --><div class="py-16 sm:py-24 bg-gray-900">
+            <!-- About Me Section -->
+            <div class="py-16 sm:py-24 bg-gray-900">
                 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                     <h2 class="text-4xl font-extrabold text-white mb-8">About Me</h2>
                     <p class="text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed">
-                        I am a GNC engineer with a focus on navigation and advanced estimation for satellites and spacecraft. I have a deep, diverse background accrued from education and experience across space systems, robotics, industrial control, hardware, and software which allows me to approach engineering problems intuitively and with unique perspective. I am naturally curious, driven by a refusal to take anything for granted, and continually seeking new challenges and opportunities to improve myself and the world around me, especially through spacecraft autonomy and earth observation. 
+                        I am a GNC engineer with a focus on navigation and advanced estimation for satellites and
+                        spacecraft. I have a deep, diverse background accrued from education and experience across space
+                        systems, robotics, industrial control, hardware, and software which allows me to approach
+                        engineering problems intuitively and with unique perspective. I am naturally curious, driven by
+                        a refusal to take anything for granted, and continually seeking new challenges and opportunities
+                        to improve myself and the world around me, especially through spacecraft autonomy and earth
+                        observation.
                     </p>
                     <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
                         <div class="bg-gray-800 p-6 border border-gray-700 sharp-shadow">
                             <h3 class="text-2xl font-bold text-indigo-400 mb-3">Creativity</h3>
-                            <p class="text-gray-300">I am a first-principles thinker with a nose for novel problems which lack a precedent or blueprint.</p>
+                            <p class="text-gray-300">I am a first-principles thinker with a nose for novel problems
+                                which lack a precedent or blueprint.</p>
                         </div>
                         <div class="bg-gray-800 p-6 border border-gray-700 sharp-shadow">
                             <h3 class="text-2xl font-bold text-indigo-400 mb-3">Curiosity</h3>
-                            <p class="text-gray-300">I have never met a subject I didn't wish I knew more about. My life revolves around chasing the "whys".</p>
+                            <p class="text-gray-300">I have never met a subject I didn't wish I knew more about. My life
+                                revolves around chasing the "whys".</p>
                         </div>
                         <div class="bg-gray-800 p-6 border border-gray-700 sharp-shadow">
                             <h3 class="text-2xl font-bold text-indigo-400 mb-3">Independence</h3>
-                            <p class="text-gray-300">Intrinsically motivated and not afraid to take responsibility, I find myself leading the charge more often than not.</p>
+                            <p class="text-gray-300">Intrinsically motivated and not afraid to take responsibility, I
+                                find myself leading the charge more often than not.</p>
                         </div>
                     </div>
                 </div>
@@ -208,7 +281,8 @@
 
             <section class="bg-space-texture-2">
 
-                <!-- Core Skills Section --><div class="py-16 sm:py-24">
+                <!-- Core Skills Section -->
+                <div class="py-16 sm:py-24">
                     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                         <h2 class="text-3xl font-extrabold text-white mb-10">Core Skills</h2>
                         <div id="core-skills-list" class="flex flex-wrap justify-center gap-4">
@@ -216,25 +290,31 @@
                         </div>
                     </div>
                 </div>
-                
-                <!-- Experience & Education Section --><div class="pb-16 sm:pb-24">
+
+                <!-- Experience & Education Section -->
+                <div class="pb-16 sm:pb-24">
                     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                         <div class="grid grid-cols-1 md:max-w-4xl mx-auto gap-12">
-                            
-                            <!-- Experience Column --><div class="bg-gray-800 p-8 border border-gray-700 sharp-shadow">
+
+                            <!-- Experience Column -->
+                            <div class="bg-gray-800 p-8 border border-gray-700 sharp-shadow">
                                 <h2 class="text-3xl font-bold text-white mb-6">Experience</h2>
-                                <!-- Experience items will be populated by JavaScript --><div id="experience-list-container" class="relative border-l-2 border-indigo-500 pl-8 space-y-10">
+                                <!-- Experience items will be populated by JavaScript -->
+                                <div id="experience-list-container"
+                                    class="relative border-l-2 border-indigo-500 pl-8 space-y-10">
                                     <!-- JS will inject experience here -->
                                 </div>
                             </div>
 
-                            <!-- Education Column --><div class="bg-gray-800 p-8 border border-gray-700 sharp-shadow">
+                            <!-- Education Column -->
+                            <div class="bg-gray-800 p-8 border border-gray-700 sharp-shadow">
                                 <h2 class="text-3xl font-bold text-white mb-6">Education</h2>
                                 <div class="space-y-6">
                                     <div>
                                         <h3 class="text-xl font-semibold text-white">M.S. in Aerospace Engineering</h3>
                                         <p class="text-indigo-400 mb-1">The University of Texas at Austin | 2027</p>
-                                        <p class="text-gray-300 italic">Nonlinear Estimation and Autonomy Research (NEAR) Group - Renato Zanetti</p>
+                                        <p class="text-gray-300 italic">Nonlinear Estimation and Autonomy Research
+                                            (NEAR) Group - Renato Zanetti</p>
                                     </div>
                                     <div>
                                         <h3 class="text-xl font-semibold text-white">B.S. in Mechanical Engineering</h3>
@@ -249,37 +329,47 @@
 
             </section>
 
-            <!-- Personal Interests Section --><div class="py-16 sm:py-24 bg-gray-900">
+            <!-- Personal Interests Section -->
+            <div class="py-16 sm:py-24 bg-gray-900">
                 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                     <h2 class="text-4xl font-extrabold text-white mb-12">Personal Interests</h2>
                     <p class="text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed mb-12">
-                        Outside of engineering, I spend time hiking, camping, photographing nature, searching for new food, and making my own.
+                        Outside of engineering, I spend time hiking, camping, photographing nature, searching for new
+                        food, and making my own.
                     </p>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-10 text-left">
                         <!-- Hobby 1 -->
                         <div class="bg-gray-800 p-6 border border-gray-700 text-center">
                             <!-- Simple SVG Icon -->
-                            <svg class="w-12 h-12 mx-auto mb-4 text-indigo-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                            <svg class="w-12 h-12 mx-auto mb-4 text-indigo-400" xmlns="http://www.w3.org/2000/svg"
+                                fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M3 21L9 9L14 15L18 6L21 21" />
                             </svg>
                             <h3 class="text-2xl font-bold text-indigo-400 mb-3">Outdoors</h3>
-                            <p class="text-gray-300">My idea of fun is hiking as far into the wilderness as possible. Everything I need fits in my backpack.</p>
+                            <p class="text-gray-300">My idea of fun is hiking as far into the wilderness as possible.
+                                Everything I need fits in my backpack.</p>
                         </div>
                         <!-- Hobby 2 -->
                         <div class="bg-gray-800 p-6 border border-gray-700 text-center">
-                            <svg class="w-12 h-12 mx-auto mb-4 text-indigo-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="m2.25 15.75 5.159-5.159a2.25 2.25 0 0 1 3.182 0l5.159 5.159m-1.5-1.5 1.409-1.409a2.25 2.25 0 0 1 3.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 0 0 1.5-1.5V6.75A1.5 1.5 0 0 0 19.5 5.25H4.5A1.5 1.5 0 0 0 3 6.75v10.5a1.5 1.5 0 0 0 1.5 1.5Zm1.5-1.5V6.75H19.5v10.5h-15Z" />
+                            <svg class="w-12 h-12 mx-auto mb-4 text-indigo-400" xmlns="http://www.w3.org/2000/svg"
+                                fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="m2.25 15.75 5.159-5.159a2.25 2.25 0 0 1 3.182 0l5.159 5.159m-1.5-1.5 1.409-1.409a2.25 2.25 0 0 1 3.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 0 0 1.5-1.5V6.75A1.5 1.5 0 0 0 19.5 5.25H4.5A1.5 1.5 0 0 0 3 6.75v10.5a1.5 1.5 0 0 0 1.5 1.5Zm1.5-1.5V6.75H19.5v10.5h-15Z" />
                             </svg>
                             <h3 class="text-2xl font-bold text-indigo-400 mb-3">Film Photography</h3>
-                            <p class="text-gray-300">Composing images and shooting in analog is the perfect creative challenge to complement my technical side.</p>
+                            <p class="text-gray-300">Composing images and shooting in analog is the perfect creative
+                                challenge to complement my technical side.</p>
                         </div>
                         <!-- Hobby 3 -->
                         <div class="bg-gray-800 p-6 border border-gray-700 text-center">
-                            <svg class="w-12 h-12 mx-auto mb-4 text-indigo-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 21V10C16 10 18 7 18 4C18 1 15 0 12 0C9 0 6 1 6 4C6 7 8 10 12 10Z" />
+                            <svg class="w-12 h-12 mx-auto mb-4 text-indigo-400" xmlns="http://www.w3.org/2000/svg"
+                                fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M12 21V10C16 10 18 7 18 4C18 1 15 0 12 0C9 0 6 1 6 4C6 7 8 10 12 10Z" />
                             </svg>
                             <h3 class="text-2xl font-bold text-indigo-400 mb-3">Food</h3>
-                            <p class="text-gray-300">Food makes me happy, especially if it's new or from a truck. Cooking is even better.</p>
+                            <p class="text-gray-300">Food makes me happy, especially if it's new or from a truck.
+                                Cooking is even better.</p>
                         </div>
                     </div>
                 </div>
@@ -287,61 +377,71 @@
 
         </section>
 
-        <!-- Page 2: Capabilities --><section id="page-capabilities" class="page bg-space-texture">
+        <!-- Page 2: Capabilities -->
+        <section id="page-capabilities" class="page bg-space-texture">
             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
                 <h1 class="text-4xl font-extrabold text-white mb-12 text-center">Core Capabilities</h1>
-                
+
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                    <!-- Capability Area 1: ADCS --><div class="bg-gray-800 p-8 border border-gray-700 sharp-shadow">
+                    <!-- Capability Area 1: ADCS -->
+                    <div class="bg-gray-800 p-8 border border-gray-700 sharp-shadow">
                         <h2 class="text-3xl font-bold text-indigo-400 mb-4">Navigation & Estimation</h2>
                         <p class="text-lg text-gray-300 mb-6">
-                            Proficiency in advanced estimation theory and methodologies, including experience with nonlinear estimation, relative navigation, and TRN. 
+                            Proficiency in advanced estimation theory and methodologies, including experience with
+                            nonlinear estimation, relative navigation, and TRN.
                         </p>
                         <ul class="list-disc list-outside pl-6 space-y-2 text-gray-300">
-                            <li>Sensor Fusion (Star Trackers, IMUs, Magnetometers)</li>
-                            <li>Kalman Filtering and Estimation Algorithms</li>
-                            <li>Reaction Wheel, Thruster, and Magnetorquer Control</li>
-                            <li>Robust Controller Design and Tuning</li>
+                            <li>Multi-Source Sensor Fusion</li>
+                            <li>EKF, UKF, Particle Filter, GSF</li>
+                            <li>TRN and INS Navigation Systems</li>
+                            <li>Familiarity with Sensor Hardware</li>
                         </ul>
                     </div>
 
-                    <!-- Capability Area 2: Orbit Dynamics & Navigation --><div class="bg-gray-800 p-8 border border-gray-700 sharp-shadow">
+                    <!-- Capability Area 2: Orbit Dynamics & Navigation -->
+                    <div class="bg-gray-800 p-8 border border-gray-700 sharp-shadow">
                         <h2 class="text-3xl font-bold text-indigo-400 mb-4">Simulation</h2>
                         <p class="text-lg text-gray-300 mb-6">
-                            A strong background in physics and modeling allows me to quickly and accurately develop simulation environments for prototyping and validation.
+                            A strong background in physics and modeling allows me to quickly and accurately develop
+                            simulation environments for prototyping and validation.
                         </p>
                         <ul class="list-disc list-outside pl-6 space-y-2 text-gray-300">
-                            <li>Orbit Determination & Prediction</li>
-                            <li>Maneuver Planning and Optimization</li>
-                            <li>Collision Avoidance (Conjunction Assessment)</li>
-                            <li>Relative Navigation for Formation Flying</li>
+                            <li>High-Fidelity 6-DOF Dynamics</li>
+                            <li>Sensor Modeling and Digital Twinning</li>
+                            <li>Monte Carlo & Sensitivity Analysis</li>
+                            <!-- <li>Relative Navigation for Formation Flying</li> -->
                         </ul>
                     </div>
 
-                    <!-- Capability Area 4: Software & Autonomy --><div class="bg-gray-800 p-8 border border-gray-700 sharp-shadow">
+                    <!-- Capability Area 4: Software & Autonomy -->
+                    <div class="bg-gray-800 p-8 border border-gray-700 sharp-shadow">
                         <h2 class="text-3xl font-bold text-indigo-400 mb-4">Software & Autonomy</h2>
                         <p class="text-lg text-gray-300 mb-6">
-                            Experience developing flight software and the associated testing and validation, including fully-autonomous applications. 
+                            Experience developing flight software and the associated testing and validation, including
+                            fully-autonomous applications.
                         </p>
                         <ul class="list-disc list-outside pl-6 space-y-2 text-gray-300">
                             <li>Flight Software Development (C++, Rust)</li>
-                            <li>Hardware Integration (Star Trackers)</li>
+                            <li>HTIL Testing and Hardware Integration</li>
                             <li>Onboard Resource Management</li>
-                            <li>AI/ML Integration for GNC (future potential)</li>
+                            <!-- <li>AI/ML Integration for GNC (future potential)</li> -->
                         </ul>
                     </div>
 
 
-                    <!-- Capability Area 3: Simulation & Testing --><div class="bg-gray-800 p-8 border border-gray-700 sharp-shadow">
+                    <!-- Capability Area 3: Simulation & Testing -->
+                    <div class="bg-gray-800 p-8 border border-gray-700 sharp-shadow">
                         <h2 class="text-3xl font-bold text-indigo-400 mb-4">Fundamentals Driven</h2>
                         <p class="text-lg text-gray-300 mb-6">
-                           A true understanding of the systems I work with allows me to distill complexity and attack problems efficiently. A structured, first-principles approach allows me to solve open-ended problems with little precedent.
+                            A true understanding of the systems I work with allows me to distill complexity and attack
+                            problems efficiently. A structured, first-principles approach allows me to solve open-ended
+                            problems with little precedent.
                         </p>
                         <ul class="list-disc list-outside pl-6 space-y-2 text-gray-300">
-                            <li>6-DOF Spacecraft Simulators (MATLAB/Simulink, Python)</li>
-                            <li>Hardware-in-the-Loop (HIL) Testbed Development</li>
-                            <li>Flight Software Integration & Verification</li>
-                            <li>Performance Analysis & De-risking</li>
+                            <li>Cross-Disciplinary/System-Level Design</li>
+                            <li>Problem Isolation and Root-Cause Analysis</li>
+                            <li>Forward-Thinking Software Design</li>
+                            <li>Intellectual Independence</li>
                         </ul>
                     </div>
                 </div>
@@ -351,7 +451,8 @@
                     <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
                         Reach out to discuss how my GNC expertise might benefit your mission.
                     </p>
-                    <a href="#contact" class="inline-block bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-4 px-10 text-lg transition-colors border-2 border-indigo-600 hover:border-indigo-500">
+                    <a href="#contact"
+                        class="inline-block bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-4 px-10 text-lg transition-colors border-2 border-indigo-600 hover:border-indigo-500">
                         Get in Touch
                     </a>
                 </div>
@@ -359,74 +460,99 @@
         </section>
 
 
-        <!-- Page 3: Projects List --><section id="page-projects" class="page py-16 sm:py-24 bg-gray-900">
+        <!-- Page 3: Projects List -->
+        <section id="page-projects" class="page py-16 sm:py-24 bg-gray-900">
             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h1 class="text-4xl font-extrabold text-white mb-12 text-center">Project Catalog</h1>
-                <!-- This grid will be populated by JavaScript --><div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Project cards will be injected here --></div>
+                <!-- This grid will be populated by JavaScript -->
+                <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Project cards will be injected here -->
+                </div>
             </div>
         </section>
 
-        <!-- Page 4: Project Detail (Template) --><section id="page-project-detail" class="page py-16 sm:py-24 bg-gray-900">
+        <!-- Page 4: Project Detail (Template) -->
+        <section id="page-project-detail" class="page py-16 sm:py-24 bg-gray-900">
             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="mb-8">
                     <a href="#projects" class="text-indigo-400 hover:text-indigo-300 transition-colors text-lg">
                         &larr; Back to Projects
                     </a>
                 </div>
-                
+
                 <div class="bg-gray-800 p-8 sm:p-12 border border-gray-700 sharp-shadow">
-                    <!-- Project Title --><h1 id="project-title" class="text-4xl font-extrabold text-white mb-4"></h1>
-                    
-                    <!-- Project Image Placeholder --><div id="project-image-container" class="mb-8">
-                        <!-- Image will be injected here --></div>
+                    <!-- Project Title -->
+                    <h1 id="project-title" class="text-4xl font-extrabold text-white mb-4"></h1>
 
-                    <!-- Project Tags --><div id="project-tags" class="flex flex-wrap gap-3 mb-8">
-                        <!-- Tags will be injected here --></div>
+                    <!-- Project Image Placeholder -->
+                    <div id="project-image-container" class="mb-8">
+                        <!-- Image will be injected here -->
+                    </div>
 
-                    <!-- Project Long Description --><div id="project-description" class="prose prose-invert prose-lg max-w-none text-gray-300 leading-relaxed space-y-4">
-                        <!-- Description HTML will be injected here --></div>
+                    <!-- Project Tags -->
+                    <div id="project-tags" class="flex flex-wrap gap-3 mb-8">
+                        <!-- Tags will be injected here -->
+                    </div>
+
+                    <!-- Project Long Description -->
+                    <div id="project-description"
+                        class="prose prose-invert prose-lg max-w-none text-gray-300 leading-relaxed space-y-4">
+                        <!-- Description HTML will be injected here -->
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Page 5: Experience Detail (Template) --><section id="page-experience-detail" class="page py-16 sm:py-24 bg-gray-900">
+        <!-- Page 5: Experience Detail (Template) -->
+        <section id="page-experience-detail" class="page py-16 sm:py-24 bg-gray-900">
             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="mb-8">
                     <a href="#home" class="text-indigo-400 hover:text-indigo-300 transition-colors text-lg">
                         &larr; Back to Home
                     </a>
                 </div>
-                
+
                 <div class="bg-gray-800 p-8 sm:p-12 border border-gray-700 sharp-shadow">
-                    <!-- Experience Title --><h1 id="experience-title" class="text-4xl font-extrabold text-white mb-2"></h1>
-                    <!-- Experience Company & Date --><p id="experience-company-date" class="text-2xl font-medium text-indigo-400 mb-8"></p>
-                    
-                    <!-- Experience Image Placeholder --><div id="experience-image-container" class="mb-8">
-                        <!-- Image will be injected here --></div>
+                    <!-- Experience Title -->
+                    <h1 id="experience-title" class="text-4xl font-extrabold text-white mb-2"></h1>
+                    <!-- Experience Company & Date -->
+                    <p id="experience-company-date" class="text-2xl font-medium text-indigo-400 mb-8"></p>
 
-                    <!-- Experience Tags --><div id="experience-tags" class="flex flex-wrap gap-3 mb-8">
-                        <!-- Tags will be injected here --></div>
+                    <!-- Experience Image Placeholder -->
+                    <div id="experience-image-container" class="mb-8">
+                        <!-- Image will be injected here -->
+                    </div>
 
-                    <!-- Experience Long Description --><div id="experience-description" class="prose prose-invert prose-lg max-w-none text-gray-300 leading-relaxed space-y-4">
-                        <!-- Description HTML will be injected here --></div>
+                    <!-- Experience Tags -->
+                    <div id="experience-tags" class="flex flex-wrap gap-3 mb-8">
+                        <!-- Tags will be injected here -->
+                    </div>
+
+                    <!-- Experience Long Description -->
+                    <div id="experience-description"
+                        class="prose prose-invert prose-lg max-w-none text-gray-300 leading-relaxed space-y-4">
+                        <!-- Description HTML will be injected here -->
+                    </div>
                 </div>
-            </Section>
+        </Section>
 
-        <!-- Page 6: Contact --><section id="page-contact" class="page bg-space-texture">
+        <!-- Page 6: Contact -->
+        <section id="page-contact" class="page bg-space-texture">
             <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
                 <div class="max-w-2xl mx-auto text-center">
                     <h1 class="text-4xl font-extrabold text-white mb-6">Get in Touch</h1>
                     <p class="text-xl text-gray-300 mb-8 leading-relaxed">
-                        I'm always open to discussing new opportunities, challenging projects, or just nerding out about space and tech.
+                        I'm always open to discussing new opportunities, challenging projects, or just nerding out about
+                        space and tech.
                     </p>
-                    
+
                     <div class="bg-gray-800 p-8 sm:p-12 border border-gray-700 sharp-shadow text-left">
                         <h2 class="text-3xl font-bold text-white mb-6">Contact Details</h2>
                         <div class="space-y-6">
                             <div>
                                 <h3 class="text-sm font-semibold text-indigo-400 uppercase tracking-wider">Email</h3>
-                                <a href="mailto:coleschuelke@gmail.com" class="text-lg text-white hover:text-indigo-300 transition-colors">coleschuelke@gmail.com</a>
+                                <a href="mailto:coleschuelke@gmail.com"
+                                    class="text-lg text-white hover:text-indigo-300 transition-colors">coleschuelke@gmail.com</a>
                             </div>
                             <div>
                                 <h3 class="text-sm font-semibold text-indigo-400 uppercase tracking-wider">Phone</h3>
@@ -434,14 +560,16 @@
                             </div>
                             <div>
                                 <h3 class="text-sm font-semibold text-indigo-400 uppercase tracking-wider">LinkedIn</h3>
-                                <a href="https://www.linkedin.com/in/coleschuelke/" target="_blank" class="text-lg text-white hover:text-indigo-300 transition-colors">linkedin.com/in/coleschuelke</a>
+                                <a href="https://www.linkedin.com/in/coleschuelke/" target="_blank"
+                                    class="text-lg text-white hover:text-indigo-300 transition-colors">linkedin.com/in/coleschuelke</a>
                             </div>
                             <div>
                                 <h3 class="text-sm font-semibold text-indigo-400 uppercase tracking-wider">Location</h3>
                                 <p class="text-lg text-white">Currently based in Austin, TX (open to relocation)</p>
                             </div>
                         </div>
-                        <a href="mailto:coleschuelke@gmail.com" class="mt-10 inline-block w-full text-center bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-4 px-10 text-lg transition-colors border-2 border-indigo-600 hover:border-indigo-500">
+                        <a href="mailto:coleschuelke@gmail.com"
+                            class="mt-10 inline-block w-full text-center bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-4 px-10 text-lg transition-colors border-2 border-indigo-600 hover:border-indigo-500">
                             Send Me an Email
                         </a>
                     </div>
@@ -451,14 +579,16 @@
 
     </main>
 
-    <!-- Footer --><footer class="border-t border-gray-700 mt-16 bg-gray-900 py-8">
+    <!-- Footer -->
+    <footer class="border-t border-gray-700 mt-16 bg-gray-900 py-8">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-400">
             <p>&copy; 2025 <span class="portfolio-name">Cole Schuelke</span>. All rights reserved.</p>
         </div>
     </footer>
 
 
-    <!-- JavaScript --><script type="module">
+    <!-- JavaScript -->
+    <script type="module">
         // --- START OF GLOBAL CONFIGURATION ---
 
         const portfolioName = "Cole Schuelke";
@@ -699,12 +829,12 @@
 
         const pages = document.querySelectorAll('.page');
         const navLinks = document.querySelectorAll('.nav-link');
-        
+
         // --- Element Selectors ---
         const coreSkillsList = document.getElementById('core-skills-list');
         const experienceListContainer = document.getElementById('experience-list-container');
         const projectsGrid = document.getElementById('projects-grid');
-        
+
         // Project Detail Page Elements
         const projectPage = document.getElementById('page-project-detail');
         const projectTitle = document.getElementById('project-title');
@@ -743,7 +873,7 @@
         function populateCoreSkills() {
             if (!coreSkillsList) return;
             // Reverted to Indigo accent color
-            coreSkillsList.innerHTML = coreSkills.map(skill => 
+            coreSkillsList.innerHTML = coreSkills.map(skill =>
                 `<span class="bg-indigo-900/50 border border-indigo-500 text-indigo-300 text-sm font-medium px-4 py-2">${skill}</span>`
             ).join('');
         }
@@ -754,7 +884,7 @@
         function populateExperienceList() {
             if (!experienceListContainer) return;
             experienceListContainer.innerHTML = ''; // Clear existing
-            
+
             for (const item of experienceData) {
                 const experienceHTML = `
                     <div class="relative">
@@ -804,7 +934,7 @@
             // Populate the project detail page
             projectTitle.textContent = project.title;
             projectImageContainer.innerHTML = `<img src="${project.imageUrl}" alt="${project.title}" class="w-full border border-gray-700 sharp-shadow max-h-[500px] object-cover" onerror="this.src='https://placehold.co/800x400/374151/818cf8?text=Project+Diagram'; this.onerror=null;">`;
-            projectTags.innerHTML = project.tags.map(tag => 
+            projectTags.innerHTML = project.tags.map(tag =>
                 `<span class="bg-indigo-600 text-white text-xs font-medium px-3 py-1">${tag}</span>`
             ).join('');
             projectDescription.innerHTML = project.longDesc;
@@ -828,7 +958,7 @@
             experienceTitle.textContent = item.title;
             experienceCompanyDate.textContent = `${item.company} | ${item.date}`;
             experienceImageContainer.innerHTML = `<img src="${item.imageUrl}" alt="${item.title}" class="w-full border border-gray-700 sharp-shadow max-h-[500px] object-cover" onerror="this.src='https://placehold.co/800x400/374151/818cf8?text=Project+Image'; this.onerror=null;">`;
-            experienceTags.innerHTML = item.tags.map(tag => 
+            experienceTags.innerHTML = item.tags.map(tag =>
                 `<span class="bg-indigo-600 text-white text-xs font-medium px-3 py-1">${tag}</span>`
             ).join('');
             experienceDescription.innerHTML = item.longDesc;
@@ -902,7 +1032,7 @@
                 // Default to home page
                 document.getElementById('page-home').classList.add('page-active');
             }
-            
+
             // Scroll to top on page change
             window.scrollTo(0, 0);
         }
@@ -944,5 +1074,5 @@
 
     </script>
 </body>
-</html>
 
+</html>
